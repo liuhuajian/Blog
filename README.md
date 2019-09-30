@@ -6,4 +6,4 @@
 
 ***粗斜体***
 
-链接项目：[跳转](./BrainTrain\Home.md)
+链接项目：[跳转](BrainTrain/Home.md)
