@@ -1,4 +1,4 @@
-# 如何训练大脑
+# 如何训练大脑 [来源](https://www.zhihu.com/question/51876878/answer/809444050?utm_source=wechat_session&utm_medium=social&utm_oi=558513502961184768&hb_wx_block=1)
 
 1. **大脑特点**<br>
 ①永远会做它认为对你有利的事<br>
