@@ -47,3 +47,13 @@ protected void onDestroy() {
 
 ## **添加回车**
 换行符号 < br >
+
+## **添加图片**
+1. 插入本地图片
+```
+![avatar](/home/picture/1.png)
+```
+2. 插入网络图片
+```
+![avatar](http://baidu.com/pic/doge.png)
+```

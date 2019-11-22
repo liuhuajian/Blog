@@ -27,3 +27,29 @@ resource_folder_cache<br>
 将手机中的文件copy到电脑桌面上
 ## 解决方法：
 adb -s 设备号 pull /mnt/sdcard/XXX C:\Users\User\Desktop\
+
+## 4、问题
+build variants切换到release无法通过编译<br>
+提示：<br>
+```
+Could not get unknown property 'release' for SigningConfig container of type
+ org.gradle.api.internal.FactoryNamedDomainObjectContainer.
+```
+## 解决办法：
+` 1、检查是否有signingConfigs {}。`<br>
+`2、将signingConfigs{} 放在 buildTypes{}的前面即可`
+
+## 5、问题
+Android 8.0: java.lang.IllegalStateException: Not allowed to start service Intent<br>
+提示：<br>
+```
+Android 8.0 还对特定函数做出了以下变更：
+ 
+（1）如果针对 Android 8.0 的应用尝试在不允许其创建后台服务的情况下使用 startService() 函数，
+     则该函数将引发一个 IllegalStateException。新的 Context.startForegroundService() 函数将启动一个前台服务。
+ 
+（2）即使应用在后台运行，系统也允许其调用 Context.startForegroundService()。不过，
+    应用必须在创建服务后的五秒内调用该服务的 startForeground() 函数。
+```
+```
+```
