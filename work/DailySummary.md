@@ -53,3 +53,21 @@ Android 8.0 还对特定函数做出了以下变更：
 ```
 ```
 ```
+
+## 6、问题
+## 如何获取当前进程处于前台
+### 方法一：使用ActivityLifecycleCallbacks
+### 方法二：使用ActivityLifecycleCallbacks
+```
+        ActivityManager am = (ActivityManager) App.mContext.getSystemService(Context.ACTIVITY_SERVICE);
+        //获取到当前正在运行的任务栈
+        List<ActivityManager.RunningTaskInfo> tasks = am.getRunningTasks(1);//参数是想获得的个数，可以随意写
+        //获取到最上面的进程
+        ActivityManager.RunningTaskInfo taskInfo = tasks.get(0);
+        //获取到最顶端应用程序的包名
+        String pName = taskInfo.topActivity.getPackageName();
+        boolean isForeground = context.getPackageName().equals(pName);
+```
+
+## 7、问题
+kotlin

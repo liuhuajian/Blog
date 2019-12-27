@@ -23,3 +23,11 @@ mLampEffectSet.takeIf { it.isNotEmpty() }?.run {
             return lampEffect.level <= last().level && last().level != -1
         } ?: return true
 ```
+3. 如何在不使用if进行条件判断，即链式处理
+```
+item.info.optString("itemid")?.apply {
+            //itemid不为空的时候执行
+        }.apply {
+            //itemid为空的时候执行
+        }
+```
