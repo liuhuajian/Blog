@@ -70,4 +70,56 @@ Android 8.0 还对特定函数做出了以下变更：
 ```
 
 ## 7、问题
-kotlin
+### kotlin
+1. 直接用xml中的id作为控件使用，会有空指针的情况，个别情况还是用findviewbyId()
+
+## 8、问题
+1. 如何将recyclerview滚动到顶部
+### 解决办法：
+```
+var position = 0
+        var firstPosition = (recyclerViewMusicList?.layoutManager as LinearLayoutManager).findFirstVisibleItemPosition()
+        adapter?.data?.run {
+            for (index in this.indices) {
+                if (this[index].songname == title) {
+                    position = index
+                    break
+                }
+            }
+        }
+if (position > firstPosition && position < firstPosition + 5) {
+            //如果当前播放的item是在屏幕中，那么无需滚动到顶部
+            return
+        }
+MyLogger.d("position-->$position")
+
+//TopSmoothScroller 继承LinearSmoothScroller
+
+var smoothScroll = TopSmoothScroller(this)
+smoothScroll.targetPosition = position
+recyclerViewMusicList.layoutManager?.startSmoothScroll(smoothScroll)
+</color>
+```
+
+### 9、问题
+## Unable to start adb server: error: protocol fault (couldn't read status): Connection reset by peer
+
+~~~
+情况出现：
+
+打开androidstudio，一直连接不上电脑，提示：Unable to start adb server: error: protocol fault (couldn't read status): Connection reset by peer
+
+问题原因：
+
+大多数情况是5037端口被占用。5037为adb默认端口。
+
+解决办法：
+查看哪个程序占用了adb端口，结束这个程序，然后重启adb就好了。
+使用命令：netstat -aon|findstr "5037"  找到占用5037端口的进程PID。
+
+使用命令：tasklist|findstr "5440"  通过PID找出进程。
+调出任务管理器，找到这个进程，结束进程。
+使用命令:adb start-server 启动adb就行了
+~~~
+![process1](../asset/process1.png)
+![process1](../asset/process2.png)
