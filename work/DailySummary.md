@@ -123,3 +123,46 @@ recyclerViewMusicList.layoutManager?.startSmoothScroll(smoothScroll)
 ~~~
 ![process1](../asset/process1.png)
 ![process1](../asset/process2.png)
+
+### 10、问题
+## 将activity设置成dialog样式，但是会有默认背景色，需要移除
+
+~~~
+    <style name="dialog_style" parent="@style/AppTheme">
+        <!--是否悬浮在activity上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--透明是否-->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:background">@null</item>
+        <!--设置没有窗口标题、dialog标题等各种标题-->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:title">@null</item>
+        <item name="android:dialogTitle">@null</item>
+    </style>
+
+~~~
+
+解决办法：在样式上设置windowBackground为透明
+
+~~~
+        <item name="android:windowBackground">
+        @color/transparent
+        </item>
+~~~
+
+### 11、项目涉及到谷歌服务，长时间无法加载
+将google()和jcenter()替换成阿里云镜像
+~~~
+//google()
+//jcenter()
+maven { url 'https://maven.aliyun.com/repository/google' }
+maven { url 'https://maven.aliyun.com/repository/jcenter' }
+maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
+~~~
+
+### 12、double类型数值过大变成科学计数型，如何完整显示
+通过DecimalFormat("0").format方式转换一下
+~~~
+val completeDoubleValue = DecimalFormat("0")
+.format(1.5827148E12).toLong()
+~~~
