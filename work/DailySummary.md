@@ -166,3 +166,12 @@ maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
 val completeDoubleValue = DecimalFormat("0")
 .format(1.5827148E12).toLong()
 ~~~
+
+### 13、用Gson将字符串转化为List<T>
+~~~
+ val type = object :TypeToken<List<TongueFaqs>>(){}.type
+ val data = Gson().fromJson<List<TongueFaqs>>(DataConfig.QUESTION_FAQS,type)
+~~~
+
+### 14、监听用户按下操作
+在activity中监听回调onUserInteraction方法即可
