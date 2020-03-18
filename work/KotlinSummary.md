@@ -1,13 +1,92 @@
-## 一、协程（Coroutine）
+# 一、协程（Coroutine）
+**参考**<br>
+[Kotlin协程笔记](https://www.jianshu.com/p/8dc8abca50e3)
+```
+GlobalScope.launch(Dispatchers.Main) {
+    MyLogger.e("run start11111")
+    val name = async(Dispatchers.IO) {
+        getName()
+    }
+    val sex = async(Dispatchers.IO) {
+        getSex()
+    }
+    val age = async(Dispatchers.IO) {
+        getAge()
+    }
+    MyLogger.e("run start22222")
+    val info = name.await() + sex.await() + age.await()
+    MyLogger.e("info-->$info")
+    ToastUtil.getInstance().showToast(info)
+}
 
-## 二、集合
-可变集合和不可变集合
+suspend fun getName():String{
+    delay(1000)
+    MyLogger.e("name-->liuhuajian")
+    return "liuhuajian"
+}        
+```
+**三种启动方式**
+1. runBlocking:T     
+
+2. launch:Job
+
+3. async/await:Deferred
+
+# 二、集合
+**可变集合和不可变集合**
 ```
 private var disposable = mutableListOf<Disposable>()
 
 private var mNotifyStrokeData: List<NotifyStroke> = mutableListOf()
 ```
-## 三、基础操作符
+# 三、常用for循环
+**遍历1-100的数值，包括1和100**
+```
+for (index in 1..100){
+            print(index)
+        }
+```
+**倒序遍历**
+```
+for (index in 100 downTo 1){
+            print(index)
+        }
+```
+**更改遍历的步长**
+```
+ for (index in 1..100 step 2){
+            print(index)//会输出1..3..5......
+        }
+```
+**不包含末尾元素**
+```
+for (index in 1 until 10){
+            println(index)//输出0..9
+        }
+```
+**遍历一个数组/列表，想同时取出下标和元素**
+```
+ val array = arrayOf("a", "b", "c")
+        for ((index,e) in array.withIndex()){
+            println("下标=$index----元素=$e")
+        }
+```
+**遍历一个数组/列表，只取出下标**
+```
+val array = arrayOf("a", "b", "c")
+        for (index in array.indices){
+            println("index=$index")//输出0，1，2
+        }
+```
+**遍历取元素**
+```
+val array = arrayOf("a", "b", "c")
+        for (element in array){
+            println("element=$element")//输出a,b,c
+        }
+```
+
+# 四、基础操作符
 ```
 1. run、with、let、also、apply 的比较 
 2. takeIf、takeUnless、repeat 的使用 
@@ -15,7 +94,7 @@ private var mNotifyStrokeData: List<NotifyStroke> = mutableListOf()
 ```
 ![过程](../asset/kotlin_process.png)
 
-## 四、关键字使用
+# 五、关键字使用
 ### [object](https://blog.csdn.net/xlh1191860939/article/details/79460601)
 1. 对象声明（Object Declaration）(单例模式)<br>
 **原理**：object declaration的类最终被编译成：一个类拥有一个静态成员来持有对自己的引用，并且这个静态成员的名称为INSTANCE，当然这个INSTANCE是单例的，故这里可以这么去使用。
