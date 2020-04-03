@@ -33,12 +33,10 @@ suspend fun getName():String{
 3. async/await:Deferred
 
 # 二、集合
-**可变集合和不可变集合**
-```
-private var disposable = mutableListOf<Disposable>()
+![list](../asset/list_diff.png)
 
-private var mNotifyStrokeData: List<NotifyStroke> = mutableListOf()
-```
+
+
 # 三、常用for循环
 **遍历1-100的数值，包括1和100**
 ```
@@ -87,6 +85,8 @@ val array = arrayOf("a", "b", "c")
 ```
 
 # 四、基础操作符
+### 关键字返回值
+![过程](../asset/keyword.png)
 ```
 1. run、with、let、also、apply 的比较 
 2. takeIf、takeUnless、repeat 的使用 

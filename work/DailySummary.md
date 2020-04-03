@@ -175,3 +175,7 @@ val completeDoubleValue = DecimalFormat("0")
 
 ### 14、监听用户按下操作
 在activity中监听回调onUserInteraction方法即可
+
+### 15、将对象通过Gson().toJson()转换为字符串后无法通过jsonObject()方式获取到
+解决办法：将对象字符串放到jsonObject参数中，例如
+new JsonObject(对象字符串)
