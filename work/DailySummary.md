@@ -179,3 +179,15 @@ val completeDoubleValue = DecimalFormat("0")
 ### 15、将对象通过Gson().toJson()转换为字符串后无法通过jsonObject()方式获取到
 解决办法：将对象字符串放到jsonObject参数中，例如
 new JsonObject(对象字符串)
+
+### 16、对日期进行格式化
+String.format("%d-%02d-%02d", year, month, day)
+位数不足两位自动补0
+
+### 16、WindowManager弹窗处于底部时添加margin边距
+~~~
+val layoutParam = WindowManager.LayoutParams()
+layoutParam.gravity = Gravity.BOTTOM
+layoutParam.y = 30
+~~~
+给y属性设置30值

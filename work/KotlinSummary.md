@@ -121,3 +121,16 @@ item.info.optString("itemid")?.apply {
             //itemid为空的时候执行
         }
 ```
+4. 如果有let符号嵌套使用，怎么使用不同的层级的内容<br>
+可以在方法体内添加data ->标识符，使用data变量
+```
+                    recyclerview_recommond?.getmNewsAdapter()?.data?.let {
+                        data ->
+                    }
+
+                    错误示范：
+                    recyclerview_recommond?.getmNewsAdapter()?.data?.run {
+                        data ->
+                    }
+```
+run、apply、let、also这四种操作符，只有let 和also可以使用
