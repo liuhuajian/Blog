@@ -94,6 +94,22 @@ val array = arrayOf("a", "b", "c")
 ```
 ![过程](../asset/kotlin_process.png)
 
+### 一元操作符
+操作符|函数
+-----|------
+!a | a.not()
+a++ | a.inc()
+a– | a.dec()
+
+### 二元操作符
+操作符|函数
+-----|------
+a + b | a.plus(b)
+a - b | a.minus(b)
+a * b | a.times(b)
+a / b | a.div(b)
+a % b | a.mod(b)
+
 # 五、关键字使用
 ### [object](https://blog.csdn.net/xlh1191860939/article/details/79460601)
 1. 对象声明（Object Declaration）(单例模式)<br>

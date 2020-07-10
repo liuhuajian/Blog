@@ -57,7 +57,6 @@ Android 8.0 还对特定函数做出了以下变更：
 ## 6、问题
 ## 如何获取当前进程处于前台
 ### 方法一：使用ActivityLifecycleCallbacks
-### 方法二：使用ActivityLifecycleCallbacks
 ```
         ActivityManager am = (ActivityManager) App.mContext.getSystemService(Context.ACTIVITY_SERVICE);
         //获取到当前正在运行的任务栈
@@ -184,10 +183,30 @@ new JsonObject(对象字符串)
 String.format("%d-%02d-%02d", year, month, day)
 位数不足两位自动补0
 
-### 16、WindowManager弹窗处于底部时添加margin边距
+### 17、WindowManager弹窗处于底部时添加margin边距
 ~~~
 val layoutParam = WindowManager.LayoutParams()
 layoutParam.gravity = Gravity.BOTTOM
 layoutParam.y = 30
 ~~~
 给y属性设置30值
+
+### 18、NestedScrollView的滚动监听,滚动到指定位置
+1. 滚动到底部
+~~~
+ svscrollouter.fullScroll(NestedScrollView.FOCUS_DOWN);
+~~~
+2. 滚动到顶部
+~~~
+svscrollouter.fullScroll(NestedScrollView.FOCUS_UP);
+~~~
+
+### 19、代码设置view的圆角
+~~~
+rectangle.outlineProvider = object : ViewOutlineProvider(){
+    override fun getOutline(view: View, outline: Outline) {
+        outline.setRoundRect(0, 0, view.width, view.height, 40f);
+    }
+}
+rectangle.clipToOutline = true
+~~~
