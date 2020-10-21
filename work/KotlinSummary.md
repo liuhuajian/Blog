@@ -33,7 +33,7 @@ suspend fun getName():String{
 3. async/await:Deferred
 
 # 二、集合
-![list](../asset/list_style.png)
+![list](../asset/img3.png)
 
 
 
@@ -86,13 +86,13 @@ val array = arrayOf("a", "b", "c")
 
 # 四、基础操作符
 ### 关键字返回值
-![过程](../asset/keyword_type.png)
+![过程](../asset/img2.png)
 ```
 1. run、with、let、also、apply 的比较 
 2. takeIf、takeUnless、repeat 的使用 
 3. 异常类的使用
 ```
-![过程](../asset/keyword_diff.png)
+![过程](../asset/img1.png)
 
 ### 一元操作符
 操作符|函数
