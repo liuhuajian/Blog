@@ -1,9 +1,9 @@
-## 1、问题
+## <b>1、问题</b>
 --- 打release包 提示gc limit<br>
 ## 解决方法：
 内存不足，需要新建gradle.properties文件，加上这一行：<br>org.gradle.jvmargs=-Xms1024m -Xmx1024m -Xmx1536M
 
-## 2、问题
+## <b>2、问题</b>
 --- 电脑断点导致Android studio环境异常，打开java文件出现标签化的乱码
 思路：
 
@@ -23,12 +23,12 @@ gradle<br>
 resource_folder_cache<br>
 4.如果Android studio中的java文件突然出现标签化的乱码，并且修改编码格式无效，也可以试一下以上方法。
 
-## 3、问题
+## <b>3、问题</b>
 将手机中的文件copy到电脑桌面上
 ## 解决方法：
 adb -s 设备号 pull /mnt/sdcard/XXX C:\Users\User\Desktop\
 
-## 4、问题
+## <b>4、问题</b>
 build variants切换到release无法通过编译<br>
 提示：<br>
 ```
@@ -39,7 +39,7 @@ Could not get unknown property 'release' for SigningConfig container of type
 ` 1、检查是否有signingConfigs {}。`<br>
 `2、将signingConfigs{} 放在 buildTypes{}的前面即可`
 
-## 5、问题
+## <b>5、问题</b>
 Android 8.0: java.lang.IllegalStateException: Not allowed to start service Intent<br>
 提示：<br>
 ```
@@ -54,7 +54,7 @@ Android 8.0 还对特定函数做出了以下变更：
 ```
 ```
 
-## 6、问题
+## <b>6、问题</b>
 ## 如何获取当前进程处于前台
 ### 方法一：使用ActivityLifecycleCallbacks
 ```
@@ -68,11 +68,11 @@ Android 8.0 还对特定函数做出了以下变更：
         boolean isForeground = context.getPackageName().equals(pName);
 ```
 
-## 7、问题
+## <b>7、问题</b>
 ### kotlin
 1. 直接用xml中的id作为控件使用，会有空指针的情况，个别情况还是用findviewbyId()
 
-## 8、问题
+## <b>8、问题</b>
 1. 如何将recyclerview滚动到顶部
 ### 解决办法：
 ```
@@ -100,7 +100,7 @@ recyclerViewMusicList.layoutManager?.startSmoothScroll(smoothScroll)
 </color>
 ```
 
-### 9、问题
+### <b>9、问题</b>
 ## Unable to start adb server: error: protocol fault (couldn't read status): Connection reset by peer
 
 ~~~
@@ -123,8 +123,7 @@ recyclerViewMusicList.layoutManager?.startSmoothScroll(smoothScroll)
 ![process1](../asset/process1.png)
 ![process1](../asset/process2.png)
 
-### 10、问题
-## 将activity设置成dialog样式，但是会有默认背景色，需要移除
+### <b>10、将activity设置成dialog样式，但是会有默认背景色，需要移除</b>
 
 ~~~
     <style name="dialog_style" parent="@style/AppTheme">
@@ -149,7 +148,7 @@ recyclerViewMusicList.layoutManager?.startSmoothScroll(smoothScroll)
         </item>
 ~~~
 
-### 11、项目涉及到谷歌服务，长时间无法加载
+### <b>11、项目涉及到谷歌服务，长时间无法加载</b>
 将google()和jcenter()替换成阿里云镜像
 ~~~
 //google()
@@ -159,31 +158,31 @@ maven { url 'https://maven.aliyun.com/repository/jcenter' }
 maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
 ~~~
 
-### 12、double类型数值过大变成科学计数型，如何完整显示
+### <b>12、double类型数值过大变成科学计数型，如何完整显示</b>
 通过DecimalFormat("0").format方式转换一下
 ~~~
 val completeDoubleValue = DecimalFormat("0")
 .format(1.5827148E12).toLong()
 ~~~
 
-### 13、用Gson将字符串转化为List<T>
+### <b>13、用Gson将字符串转化为List<T></b>
 ~~~
  val type = object :TypeToken<List<TongueFaqs>>(){}.type
  val data = Gson().fromJson<List<TongueFaqs>>(DataConfig.QUESTION_FAQS,type)
 ~~~
 
-### 14、监听用户按下操作
+### <b>14、监听用户按下操作</b>
 在activity中监听回调onUserInteraction方法即可
 
-### 15、将对象通过Gson().toJson()转换为字符串后无法通过jsonObject()方式获取到
+### <b>15、将对象通过Gson().toJson()转换为字符串后无法通过jsonObject()方式获取到</b>
 解决办法：将对象字符串放到jsonObject参数中，例如
 new JsonObject(对象字符串)
 
-### 16、对日期进行格式化
+### <b>16、对日期进行格式化</b>
 String.format("%d-%02d-%02d", year, month, day)
 位数不足两位自动补0
 
-### 17、WindowManager弹窗处于底部时添加margin边距
+### <b>17、WindowManager弹窗处于底部时添加margin边距</b>
 ~~~
 val layoutParam = WindowManager.LayoutParams()
 layoutParam.gravity = Gravity.BOTTOM
@@ -191,7 +190,7 @@ layoutParam.y = 30
 ~~~
 给y属性设置30值
 
-### 18、NestedScrollView的滚动监听,滚动到指定位置
+### <b>18、NestedScrollView的滚动监听,滚动到指定位置</b>
 1. 滚动到底部
 ~~~
  svscrollouter.fullScroll(NestedScrollView.FOCUS_DOWN);
@@ -201,7 +200,7 @@ layoutParam.y = 30
 svscrollouter.fullScroll(NestedScrollView.FOCUS_UP);
 ~~~
 
-### 19、代码设置view的圆角
+### <b>19、代码设置view的圆角</b>
 ~~~
 rectangle.outlineProvider = object : ViewOutlineProvider(){
     override fun getOutline(view: View, outline: Outline) {
@@ -209,4 +208,11 @@ rectangle.outlineProvider = object : ViewOutlineProvider(){
     }
 }
 rectangle.clipToOutline = true
+~~~
+
+### <b>20、JSON获取null数据时直接得到null字符串</b>
+解决办法：
+~~~
+1、用实体类来解析
+2、将json中的null替换为空字符串
 ~~~

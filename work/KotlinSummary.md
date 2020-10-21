@@ -110,6 +110,9 @@ a * b | a.times(b)
 a / b | a.div(b)
 a % b | a.mod(b)
 
+### 构造函数
+主构造函数、次构造函数、init初始化
+
 # 五、关键字使用
 ### [object](https://blog.csdn.net/xlh1191860939/article/details/79460601)
 1. 对象声明（Object Declaration）(单例模式)<br>
