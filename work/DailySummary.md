@@ -216,3 +216,16 @@ rectangle.clipToOutline = true
 1、用实体类来解析
 2、将json中的null替换为空字符串
 ~~~
+
+### <b>21、颜色值设置可变ARGB值
+~~~
+将ARGB颜色值拼接：
+int color = (A & 0xff) << 24 | (R & 0xff) << 16 | (G & 0xff) << 8 | (B & 0xff);
+
+
+获取每一位的值：
+int A = (color >> 24) & 0xff; // or color >>> 24
+int R = (color >> 16) & 0xff;
+int G = (color >>  8) & 0xff;
+int B = (color      ) & 0xff;
+~~~
