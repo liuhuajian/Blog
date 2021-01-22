@@ -99,7 +99,7 @@ val array = arrayOf("a", "b", "c")
 -----|------
 !a | a.not()
 a++ | a.inc()
-a– | a.dec()
+a-- | a.dec()
 
 ### 二元操作符
 操作符|函数
@@ -140,7 +140,7 @@ item.info.optString("itemid")?.apply {
             //itemid为空的时候执行
         }
 ```
-4. 如果有let符号嵌套使用，怎么使用不同的层级的内容<br>
+4. 如果有let、also这两个identifier为it的符号嵌套使用，怎么使用不同的层级的内容<br>
 可以在方法体内添加data ->标识符，使用data变量
 ```
                     recyclerview_recommond?.getmNewsAdapter()?.data?.let {
@@ -152,4 +152,4 @@ item.info.optString("itemid")?.apply {
                         data ->
                     }
 ```
-run、apply、let、also这四种操作符，只有let 和also可以使用
+run、apply、let、also这四种操作符，只有<font color="#f00">let 和also</font>可以使用
