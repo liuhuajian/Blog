@@ -229,3 +229,10 @@ int R = (color >> 16) & 0xff;
 int G = (color >>  8) & 0xff;
 int B = (color      ) & 0xff;
 ~~~
+
+### <b>22、Android studio 一直卡在Gradle:Build Running
+~~~
+将maven地址从谷歌换成阿里云镜像
+
+maven { url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+~~~
