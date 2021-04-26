@@ -236,3 +236,8 @@ int B = (color      ) & 0xff;
 
 maven { url 'http://maven.aliyun.com/nexus/content/groups/public/'}
 ~~~
+
+### <b>23、adb 将日志输出到指定目录，日志中出现乱码
+~~~
+进入控制面板的区域窗口，勾选使用UTF-8提供能全球语言支持
+~~~
