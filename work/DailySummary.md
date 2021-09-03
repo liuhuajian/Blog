@@ -217,7 +217,7 @@ rectangle.clipToOutline = true
 2、将json中的null替换为空字符串
 ~~~
 
-### <b>21、颜色值设置可变ARGB值
+### <b>21、颜色值设置可变ARGB值</b>
 ~~~
 将ARGB颜色值拼接：
 int color = (A & 0xff) << 24 | (R & 0xff) << 16 | (G & 0xff) << 8 | (B & 0xff);
@@ -230,14 +230,24 @@ int G = (color >>  8) & 0xff;
 int B = (color      ) & 0xff;
 ~~~
 
-### <b>22、Android studio 一直卡在Gradle:Build Running
+### <b>22、Android studio 一直卡在Gradle:Build Running</b>
 ~~~
 将maven地址从谷歌换成阿里云镜像
 
 maven { url 'http://maven.aliyun.com/nexus/content/groups/public/'}
 ~~~
 
-### <b>23、adb 将日志输出到指定目录，日志中出现乱码
+### <b>23、adb 将日志输出到指定目录，日志中出现乱码</b>
 ~~~
 进入控制面板的区域窗口，勾选使用UTF-8提供能全球语言支持
+~~~
+
+### <b>24、studio升级到4.1之后代码随便敲都不报红，代码也没有颜色区分，也不会提示导包</b>
+~~~
+原因：部分插件导致
+检查是否有 android-butterknife-zelezny 插件 或者GsonFormat
+
+操作步骤 File-Settings-Plugins
+
+移除后 重启编译器就可以了
 ~~~

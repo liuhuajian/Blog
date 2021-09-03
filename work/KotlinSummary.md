@@ -36,8 +36,7 @@ suspend fun getName():String{
 ![list](../asset/img3.png)
 
 
-
-# 三、常用for循环
+### 常用for循环
 **遍历1-100的数值，包括1和100**
 ```
 for (index in 1..100){
@@ -83,6 +82,15 @@ val array = arrayOf("a", "b", "c")
             println("element=$element")//输出a,b,c
         }
 ```
+
+# 三、类与对象
+## 关键术语
+```
+主构造函数、次构造函数、初始化代码块
+
+open
+```
+
 
 # 四、基础操作符
 ### 关键字返回值
@@ -153,8 +161,6 @@ if (x in 1..y+1 step 2) {
 companion object {}中用来修饰 静态常量，或者静态方法，单例等等
 伴生对象可以理解为内部类
 3. 对象表达式（Object Expression）
-
-
 
 ## 总结：
 1. apply和run的区别：apply返回<font color="#f00">对象本身</font>，而run返回最后一行的值，场景不同
