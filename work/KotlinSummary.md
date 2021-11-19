@@ -126,8 +126,7 @@ a % b | a.mod(b)
 关键字init：init{}它被称作是初始化代码块（Initializer Block），它的作用是为了Primary Constructor服务的，由于Primary Constructor是放置在类的首部，是不能包含任何初始化执行语句的，这是语法规定的，那么这个时候就有了init的用武之地，我们可以把初始化执行语句放置在此处，为属性进行赋值。
 ~~~
 
-### <b>延迟属性</b>
-lazy
+### <b>延迟属性 lazy</b> 
 ~~~
 lazy() 是接受一个lambda 并返回一个 Lazy <T> 实例的函数，返回的实例可以作为实现延迟属性的委托。也就是说：
 第一次调用get() 会执行已传递给 lazy() 的 lambda 表达式并记录结果， 后续调用get() 只是返回记录的结果。
@@ -140,8 +139,7 @@ lazy { ... }代表只能用于val属性，而lateinit只能用于var，因为它
 lateinit var具有存储值的后备字段(backing field)，而by lazy { ... }创建一个委托对象，其中存储一次计算的值，将对代理实例的引用存储在类对象中，并为与委托实例一起使用的属性生成getter。
 ~~~
 
-### <b>类型检测</b>
-is
+### <b>类型检测 is</b>
 
 ### <b>使用区间</b>
 使⽤ in 运算符来检测某个数字是否在指定区间内，step运算符指步骤
@@ -153,8 +151,26 @@ if (x in 1..y+1 step 2) {
 }
 ~~~
 
+### <b>泛型</b>
+~~~
+1. in out
+
+如果泛型类只将泛型类型作为函数的入参（输入），那么使用 in：
+
+interface Consumer<in T> {
+    fun consume(item: T)
+}
+
+如果泛型类只将泛型类型作为函数的返回（输出），那么使用 out：
+
+interface Production<out T> {
+    fun produce(): T
+}
+
+~~~
+
 # 五、关键字使用
-### [object](https://blog.csdn.net/xlh1191860939/article/details/79460601)
+## [object](https://blog.csdn.net/xlh1191860939/article/details/79460601)
 1. 对象声明（Object Declaration）(单例模式)<br>
 **原理**：object declaration的类最终被编译成：一个类拥有一个静态成员来持有对自己的引用，并且这个静态成员的名称为INSTANCE，当然这个INSTANCE是单例的，故这里可以这么去使用。
 2. 伴生对象（Companion Object）<br>
@@ -162,7 +178,11 @@ companion object {}中用来修饰 静态常量，或者静态方法，单例等
 伴生对象可以理解为内部类
 3. 对象表达式（Object Expression）
 
-## 总结：
+## vararg
+vararg是可变长度参数
+
+
+# 六、总结：
 1. apply和run的区别：apply返回<font color="#f00">对象本身</font>，而run返回最后一行的值，场景不同
 2. 集合数组可以使用last()获取最后一个对象，例如<br>
 ```
