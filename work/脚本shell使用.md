@@ -39,3 +39,11 @@ echo MM:%MM%
 echo ss:%ss%
 pause
 ~~~
+
+~~~
+adb shell
+which change_cpu.sh //查找文件位置
+cat /proc/cpuinfo
+cat /system/bin/clean_cache.sh
+cat /system/bin/change_cpu.sh
+~~~
