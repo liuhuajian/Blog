@@ -1,3 +1,51 @@
+# 2021.11.26
+### 安排
+~~~
+1. 屏幕机型适配
+2. kotlin协程
+3. FileProvider内初始化信息
+医院版下版本估时
+--- 配置、血压、血糖接口联调 5h
+--- 动态配置技能跳转 4h
+--- 血压蓝牙搜索、检测UI、异常弹窗 12h
+--- 血糖蓝牙搜索、检测UI、选择时间段、异常弹窗 16h
+--- 医院版加入日志上传以及接口联调(是否有ui) 3h
+--- 崩溃拦截 2h
+--- 结果页添加默认显示 2h
+--- 用户版多轮语音优化 5h
+--- 用户版全局 5h
+~~~
+
+# 2021.11.25
+### 安排
+~~~
+1. 医院版添加grafana日志上传
+2. 医院版添加崩溃后直接回到首页功能
+~~~
+
+# 2021.11.24
+### 安排
+~~~
+1. Composing builds搭建、mvvm搭建
+2. gradle熟悉
+~~~
+
+# 2021.11.23
+### 安排
+~~~
+1. 医院帮忙
+2. Composing builds初搭建
+
+~~~
+
+# 2021.11.22
+### 安排
+~~~
+1. 舌诊仪送审版提测
+2. 医院版舌诊预览帧改成一秒10帧提测
+
+~~~
+
 # 2021.11.19
 ### 安排
 ~~~
@@ -9,9 +57,27 @@
 
 ### 总结
 ~~~
-1. 组件化需要解决的问题
+1. 组件化重点
 --- 组件间通讯
 --- 动态配置ApplicationId和AndroidManifest
+--- 管理gradle依赖方式
+    1、使用 ext 的方式管理插件依赖库
+    2、Kotlin + buildSrc
+    3、Composing builds
+--- 使用resourcePrefix约束资源前缀
+--- libres是很有必要的，否则文件名冲突会很多
+--- 忽略文件只存在根目录一个
+--- AndResGuard优化apk大小
+--- Android App Bundle
+--- multiDex 分包
+--- implementation compileOnly api在组件化中的正确使用姿势
+--- 初始化内容放在FileProvider(FileProvider的使用方式)
+--- proguard-files 文件夹统一放置混淆内容
+
+2. 组件化遗留问题
+--- 开启混淆后阿router提示no map异常
+--- 运行模块组件时，提示
+removing unused resources requires unused code shrinking to be turned on (已解决，因为重复添加buildTypes)
 ~~~
 
 # 2021.11.18
