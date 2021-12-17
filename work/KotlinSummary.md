@@ -139,6 +139,13 @@ lazy { ... }代表只能用于val属性，而lateinit只能用于var，因为它
 lateinit var具有存储值的后备字段(backing field)，而by lazy { ... }创建一个委托对象，其中存储一次计算的值，将对代理实例的引用存储在类对象中，并为与委托实例一起使用的属性生成getter。
 ~~~
 
+### <b>成员变量 自定义getter</b> 
+如果我们定义了一个自定义的 getter，那么每次访问该属性时都会调用它
+~~~
+val isEmpty: Boolean
+    get() = this.size == 0
+~~~
+
 ### <b>类型检测 is</b>
 
 ### <b>使用区间</b>

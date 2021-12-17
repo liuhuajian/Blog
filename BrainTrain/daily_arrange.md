@@ -1,3 +1,56 @@
+# 2021.12.17
+### 安排
+~~~
+1. mvp架构优化（使用注解注入presenter对象）
+2. fragment基类抽取
+3. 添加baseFragment以及baseLoadingDialog
+~~~
+
+# 2021.12.16
+### 安排
+~~~
+1. 解决蓝牙设备多次连接后无法搜索到的情况（蓝牙sdk版本号升级）
+~~~
+
+# 2021.12.15
+### 安排
+~~~
+1. 排查医院版蓝牙长时间使用导致无法搜索到设备问题
+
+学习
+--- get()方式 每次都调用对应内容
+--- 每日算法题目
+~~~
+
+# 2021.12.14
+### 安排
+~~~
+
+工作
+--- 优化唤醒内存占用
+--- 解决脉诊用户uuid异常问题
+
+学习
+--- 1. mvvm使用
+--- 2. kotlin by 、 where 、noinline、inline关键字使用
+~~~
+
+# 2021.12.13
+### 安排
+~~~
+1. DataBinding以及mvvm架构初始化
+2. LeakCanary原理解析
+--- ReferenceQueue的使用
+--- CountDownLatch的使用
+--- 使用Foreground service，IntentService
+--- 流程分析
+--- 思考为何后台服务会被回收
+--- HandlerThread、Handler的理解
+--- 分析hprof文件
+
+3. kotlin协程使用
+~~~
+
 # 2021.12.10
 ### 安排
 ~~~

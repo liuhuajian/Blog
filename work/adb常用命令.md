@@ -54,14 +54,26 @@ adb shell dumpsys window windows | findstr "Current"
 adb shell dumpsys window windows | findstr "Current"
 ```
 
+### 截屏
+```
+adb screencap -p /sdcard/xxx.png
+```
+
 ### 控制网络状态
 ```
 adb shell
 打开网络
-svc wifi disable
+svc wifi enable
 
 关闭网络
-svc wifi enable
+svc wifi disable
+
+打开蓝牙
+svc bluetooth enable
+
+关闭蓝牙
+svc bluetooth disable
+
 ```
 
 ### log日志相关
