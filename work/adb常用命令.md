@@ -19,6 +19,18 @@ Key-->4返回<br>
 Key-->3 回到桌面<br>
 ```
 
+### 输入文本
+```
+adb shell input text 123456 输入123456
+adb shell input keyevent 66 输入回车
+```
+
+### 安装apk
+```
+adb install xx.apk 普通安装
+adb install -r xx.apk 覆盖安装
+```
+
 ### 通过包名+类名打开应用
 ```
 adb shell am start -n + 包名/.类名
